@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      .intro {
+        background-color: aqua;
+        color: black;
+        text-align: center;
+        padding: 50px 0;
+      }
+
+      .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+
+      .about {
+        background-color: #f8f9fa;
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      .porj {
+        background-color: #e9ecef;
+        padding: 50px 0;
+      }
+
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .project {
+        width: 30%;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .project-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .contact {
+        background-color: #f8f9fa;
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-form label {
+        margin-top: 10px;
+      }
+
+      .contact-form input {
+        width: 100%;
+        max-width: 500px;
+        padding: 10px;
+        margin-top: 5px;
+      }
+
+      .contact-form button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .contact-form button:hover {
+        background-color: #0056b3;
+      }
+
+      @media (max-width: 768px) {
+        .projects {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .project {
+          width: 80%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .profile-img {
+          width: 100px;
+          height: 100px;
+        }
+
+        .lead {
+          font-size: 1.2em;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="intro">
+      <img src="profile.jpg" class="profile-img" alt="error" />
+      <h1>Om Patil</h1>
+      <p>Geaduate Analyst @Deustche Bank</p>
+    </header>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        An Enthusiastic college student with various skills. Able to work with
+        different kinds of people and also manage them to achieve collective
+        goals. Proficient in various technologies required to be able to keep up
+        with the current trends of the market and an attitude to learn them.
+        Committed to find a solution to a problem by recognizing it before it
+        may create any trouble. Ability to motivate and lead cross-functional
+        teams to achieve common goals and objectives
+      </p>
+    </section>
+
+    <section class="porj">
+      <div class="container">
+        <h2>Project</h2>
+        <div class="projects">
+          <!-- Project 1 -->
+          <div class="project">
+            <img src="project1.jpg" class="project-img" alt="Project 1" />
+            <h5>Online Banking System</h5>
+            <p>
+              This project was built using Java which provides a secure and
+              efficient platform for managing financial transactions, customer
+              accounts, and banking operations. Leveraging object-oriented
+              programming principles and Java’s robust libraries, the software
+              offers features such as account management, transaction
+              processing, and user authentication to ensure reliable and
+              scalable banking services.
+            </p>
+          </div>
+          <div class="project">
+            <img src="project2.jpg" class="project-img" alt="Project 2" />
+            <h5>Modern Electric Meter using ESP32</h5>
+            <p>
+              The project combines the power of connectivity and advanced
+              metering capabilities. The ESP32 module enables wireless
+              communication, allowing real-time data monitoring and remote
+              management of energy consumption. With the IoT application, users
+              can access energy usage information, set alerts, track patterns,
+              and optimize energy efficiency, providing a convenient and
+              intelligent solution for smart energy management.
+            </p>
+          </div>
+          <div class="project">
+            <img src="project3.jpg" class="project-img" alt="Project 3" />
+            <h5>Bank Locker System</h5>
+            <p>
+              This project was build using AI tools of ESP32-CAM module
+              integrates computer vision capabilities with the ESP32-CAM module
+              to enhance security and convenience.The ESP32-CAM module captures
+              and processes images, allowing real-time monitoring and alerts,
+              providing a reliable and intelligent solution for bank locker
+              management.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="contact">
+      <form class="contact-form">
+        <p>Put your details here and wait for me</p>
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+        <button type="submit">Send</button>
+      </form>
+    </footer>
+  </body>
+</html>
