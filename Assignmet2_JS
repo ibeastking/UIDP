@@ -1,0 +1,117 @@
+function task1(arr) {
+    return arr.map(num => num ** 3)
+}
+
+function task2(arr) {
+    return arr.reduce((sum, num) => sum + num, 0);
+}
+
+function task3(arr) {
+    return arr.filter((num)=>{
+        if(num <= 1) return false;
+        for(let i=2;i<=num/2;i++){
+            if(num%i === 0) return false;
+        }
+        return true;
+    })
+}
+
+function task4(arr) {
+    const odd = arr.filter(num => num%2 !== 0);
+    const square = odd.map(num => num ** 2);
+    const sum = square.reduce((sum, num) => sum + num, 0);
+    return sum/square.length;
+}
+
+function task5(arr) {
+    return arr.reduce((longest, current) => current.length > longest.length ? current : longest, "");
+}
+
+function task6(sentence) {
+    return sentence.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
+function task7(students) {
+    return students.filter(student => student.score>=60);
+}
+
+function task8() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+function task9(a, b, operation) {
+    return new Promise((resolve, reject) => {
+        switch (operation) {
+            case 'add':
+                resolve(a + b);
+                break;
+            case 'subtract':
+                resolve(a - b);
+                break;
+            case 'multiply':
+                resolve(a * b);
+                break;
+            case 'divide':
+                if (b === 0) {
+                    reject("Division by zero error.");
+                } else {
+                    resolve(a / b);
+                }
+                break;
+            default:
+                reject("Error");
+        }
+    });
+}
+
+function task10(arr) {
+    let totalScore = 0;
+    arr.forEach(item => {
+        totalScore += item.score;
+    });
+    return totalScore;
+}
+
+const arr1 = [1,2,3,4,5];
+const arr2 = ["om", "rahul", "sanket", "meet", "shounak"];
+const sentence = "i am javascript";
+const students = [
+    {name: 'om', score: 58},
+    {name: 'rahul', score: 49},
+    {name: 'sanket', score: 75},
+    {name: 'meet', score: 87},
+    {name: 'shounak', score: 50},
+];
+
+const marks = [
+    {score: 58},
+    {score: 49},
+    {score: 75},
+    {score: 87},
+    {score: 50}
+];
+
+const counter1 = task8();
+const counter2 = task8();
+
+console.log(task1(arr1))
+console.log(task2(arr1))
+console.log(task3(arr1))
+console.log(task4(arr1))
+console.log(task5(arr2))
+console.log(task6(sentence))
+console.log(task7(students))
+console.log(counter1());
+console.log(counter1());
+console.log(counter2());
+console.log(counter2());
+task9(5, 5, 'add').then(result => console.log(result)).catch(error => console.log(error)); 
+task9(5, 5, 'subtract').then(result => console.log(result)).catch(error => console.log(error));
+task9(10, 5, 'multiply').then(result => console.log(result)).catch(error => console.log(error));
+task9(10, 2, 'divide').then(result => console.log(result)).catch(error => console.log(error)); 
+task9(10, 0, 'divide').then(result => console.log(result)).catch(error => console.log(error)); 
+console.log(task10(marks));
