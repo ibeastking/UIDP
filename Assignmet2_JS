@@ -70,8 +70,8 @@ function task9(a, b, operation) {
 
 function task10(arr) {
     let totalScore = 0;
-    arr.forEach(item => {
-        totalScore += item.score;
+    arr.forEach(student => {
+        totalScore += student.score;
     });
     return totalScore;
 }
@@ -85,14 +85,6 @@ const students = [
     {name: 'sanket', score: 75},
     {name: 'meet', score: 87},
     {name: 'shounak', score: 50},
-];
-
-const marks = [
-    {score: 58},
-    {score: 49},
-    {score: 75},
-    {score: 87},
-    {score: 50}
 ];
 
 const counter1 = task8();
@@ -114,4 +106,4 @@ task9(5, 5, 'subtract').then(result => console.log(result)).catch(error => conso
 task9(10, 5, 'multiply').then(result => console.log(result)).catch(error => console.log(error));
 task9(10, 2, 'divide').then(result => console.log(result)).catch(error => console.log(error)); 
 task9(10, 0, 'divide').then(result => console.log(result)).catch(error => console.log(error)); 
-console.log(task10(marks));
+console.log(task10(students));
